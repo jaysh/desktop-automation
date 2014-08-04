@@ -1,0 +1,7 @@
+- name: Install various tracing utilities
+  apt: pkg={{ item }} state=installed
+  with_items:
+    - strace
+    - tcpdump
+    - wireshark
+    - gdb

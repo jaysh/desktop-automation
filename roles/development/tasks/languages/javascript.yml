@@ -1,0 +1,9 @@
+- name: Install NodeJS
+  apt: pkg=nodejs state=installed
+
+- name: Install NodeJS's package manager
+  apt: pkg=npm state=installed
+
+- name: Install PhantomJS
+  apt: pkg=phantomjs state=installed
+

@@ -1,0 +1,11 @@
+- name: Install PHP CLI
+  apt: pkg=php5-cli state=installed
+
+- name: Install PHP linters
+  apt: pkg=php-codesniffer state=installed
+
+- name: Install PHP debugging libraries
+  apt: pkg=php5-xdebug
+
+- name: Install PHP XDebug viewer
+  apt: pkg=kcachegrind state=installed

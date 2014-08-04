@@ -1,0 +1,5 @@
+- name: Install Python
+  apt: pkg=python state=installed
+
+- name: Install Python's package managers
+  apt: pkg=python-pip state=installed

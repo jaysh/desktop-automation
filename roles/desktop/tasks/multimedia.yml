@@ -1,0 +1,2 @@
+- name: Install VLC
+  apt: pkg=vlc state=installed

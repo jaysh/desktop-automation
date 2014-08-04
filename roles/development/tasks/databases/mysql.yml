@@ -1,0 +1,2 @@
+- name: Install MySQL client
+  apt: pkg=mysql-client state=installed

@@ -1,0 +1,8 @@
+- name: Install whois client
+  apt: pkg=whois state=installed
+
+- name: Install bandwidth monitor
+  apt: pkg=bwm-ng state=installed
+
+- name: Install unrar-er
+  apt: pkg=rar state=installed

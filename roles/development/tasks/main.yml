@@ -1,0 +1,16 @@
+- include: services/ssh.yml
+- include: services/heroku.yml
+- include: version-control.yml
+- include: languages/java.yml
+- include: languages/javascript.yml
+- include: languages/c.yml
+- include: languages/python.yml
+- include: languages/php.yml
+- include: languages/cpp.yml
+- include: languages/android.yml
+- include: editors.yml
+- include: utilities.yml
+- include: terminals.yml
+- include: graphics.yml
+- include: databases/mysql.yml
+- include: tracers.yml

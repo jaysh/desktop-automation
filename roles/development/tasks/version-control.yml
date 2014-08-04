@@ -1,0 +1,8 @@
+- name: Install Git and Gitk
+  apt: pkg={{ item }} state=installed
+  with_items:
+    - git
+    - gitk
+
+- name: Install Subversion
+  apt: pkg=subversion state=installed

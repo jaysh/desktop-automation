@@ -1,0 +1,13 @@
+- name: Install Android tools
+  apt: pkg={{ item }} state=installed
+  with_items:
+    - android-tools-adb
+    - android-tools-fastboot
+
+- name: Install Android SDK
+  apt: pkg={{ item }} state=installed
+  with_items:
+    - androidsdk-ddms
+    - androidsdk-hierarchyviewer
+    - androidsdk-traceview
+    - androidsdk-uiautomatorviewer

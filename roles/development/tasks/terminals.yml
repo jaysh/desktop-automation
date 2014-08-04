@@ -1,0 +1,8 @@
+- name: Install useful terminals
+  apt: pkg={{ item }} state=installed
+  with_items:
+    - terminator
+    - guake
+
+- name: Install screen
+  apt: pkg=screen state=installed

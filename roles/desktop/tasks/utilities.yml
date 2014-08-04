@@ -1,0 +1,12 @@
+- name: Install improved and specialised versions of 'top'
+  apt: pkg={{ item }} state=installed
+  with_items:
+    - htop
+    - iotop
+    - powertop
+
+- name: Install GParted
+  apt: pkg=gparted state=installed
+
+- name: Install unetbootin
+  apt: pkg=unetbootin state=installed

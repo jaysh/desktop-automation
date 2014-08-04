@@ -1,0 +1,9 @@
+- name: Install basic terminal editors
+  apt: pkg={{ item }} state=installed
+  with_items:
+    - nano
+    - vim
+    - emacs
+
+- name: Install rich GUI editors
+  apt: pkg=sublime-text state=installed

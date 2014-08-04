@@ -1,0 +1,4 @@
+- name: Install Heroku Toolbelt
+  shell: wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+  args:
+    creates: /usr/local/heroku

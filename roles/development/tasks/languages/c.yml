@@ -1,0 +1,5 @@
+- name: Install GCC
+  apt: pkg=gcc state=installed
+
+- name: Install Valgrind
+  apt: pkg=valgrind state=installed

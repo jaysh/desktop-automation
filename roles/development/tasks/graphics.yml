@@ -1,0 +1,5 @@
+- name: Install Gimp
+  apt: pkg=gimp state=installed
+
+- name: Install ImageMagick
+  apt: pkg=imagemagick state=installed

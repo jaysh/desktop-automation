@@ -1,0 +1,2 @@
+- name: Install Java 7 runtime
+  apt: pkg=openjdk-7-jre state=installed

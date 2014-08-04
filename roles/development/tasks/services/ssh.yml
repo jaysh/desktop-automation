@@ -1,0 +1,5 @@
+- name: Install sshd client and server
+  apt: pkg={{ item }} state=installed
+  with_items:
+    - openssh-client
+    - openssh-server

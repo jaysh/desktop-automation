@@ -1,0 +1,2 @@
+google_chrome_apt_file: /etc/apt/sources.list.d/google-chrome.list
+google_talk_apt_file: /etc/apt/sources.list.d/google-talk.list
