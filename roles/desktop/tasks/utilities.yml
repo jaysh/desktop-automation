@@ -10,3 +10,6 @@
 
 - name: Install unetbootin
   apt: pkg=unetbootin state=installed
+
+- name: Install tree for an overview version of "ls"
+  apt: pkg=tree state=installed

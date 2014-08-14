@@ -1,5 +1,6 @@
-- include: virtualisations.yml
-- include: browsers.yml
-- include: utilities.yml
-- include: communicators.yml
-- include: multimedia.yml
+- include: version-control.yml tags=version-control
+- include: virtualisations.yml tags=virtualisations
+- include: browsers.yml tags=browsers
+- include: utilities.yml tags=utilities
+- include: communicators.yml tags=communicators
+- include: multimedia.yml tags=multimedia

@@ -7,3 +7,9 @@
 - name: Install PhantomJS
   apt: pkg=phantomjs state=installed
 
+- name: Install useful npm modules
+  shell: npm -g install {{ item }}
+  with_items:
+    - casperjs
+    - slimerjs
+    - jshint

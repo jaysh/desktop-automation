@@ -3,3 +3,17 @@
 
 - name: Install Python's package managers
   apt: pkg=python-pip state=installed
+
+- name: Install pylint
+  apt: pkg=pylint state=installed
+
+- name: mitmproxy library dependencies
+  apt: pkg={{ item }} state=installed
+  with_items:
+    - libxml2-dev
+    - libxslt-dev
+
+- name: Install Pip modules
+  shell: pip install {{ item }}
+  with_items:
+    - mitmproxy
