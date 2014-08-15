@@ -10,7 +10,7 @@ Ansible scripts that I run in order to convert a basic apt based distribution in
 3. ???
 4. Profit!
 
-# Things left to do:
+# Things left to do
 
 In general, now this is an unscalable set of scripts that configure a personal laptop or desktop into a setup I'm comfortable with. Lots of assumptions are made: every environment should be the same, and anyone else who uses this repository wants exactly the same packages as I do. Right now, this is true for me, which is why it's this way. However, this is just a starting point for people to tell me what they'd like different so I can take those thoughts on board. I have lots of things in the pipeline that I plan:
 
