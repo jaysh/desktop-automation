@@ -13,3 +13,13 @@
 
 - name: Install tree for an overview version of "ls"
   apt: pkg=tree state=installed
+
+- name: Install cURL
+  apt: pkg=curl state=installed
+
+- name: Install system monitors for applets
+  apt: pkg={{ item }} state=installed
+  with_items:
+    - vnstat
+    - vnstati
+    - gir1.2-gtop-2.0
