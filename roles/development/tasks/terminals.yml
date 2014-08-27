@@ -4,5 +4,8 @@
     - terminator
     - guake
 
+- name: Setup my custom .bashrc
+  template: src=bashrc.j2 dest=~/.bashrc
+
 - name: Install screen
   apt: pkg=screen state=installed
