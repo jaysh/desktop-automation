@@ -4,3 +4,4 @@
 - include: utilities.yml tags=utilities
 - include: communicators.yml tags=communicators
 - include: multimedia.yml tags=multimedia
+- include: boot.yml tags=boot
