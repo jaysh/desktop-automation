@@ -1,0 +1,19 @@
+{% raw %}
+# Use this awesome Git Bash prompt (credits in the included file).
+source $HOME/git_prompt.sh
+
+# I like to use Sublime as my "terminal" editor (weird, I know).
+export EDITOR='subl -w'
+
+# Place my "bin" early in the $PATH.
+PATH="$HOME/bin:$PATH"
+
+# This enables me to keep further bashrc files modular.
+if [ -d $HOME/.bashrc.d ];
+then
+	for bashrc in $HOME/.bashrc.d/*;
+	do
+		source $bashrc
+	done
+fi
+{% endraw %}

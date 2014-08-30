@@ -26,3 +26,9 @@
 
 - name: Install VirtualBox
   apt: pkg=virtualbox state=installed
+
+- name: Ensure /etc/hosts.docker is writable by anyone in the Docker group
+  file: path=/etc/hosts.docker owner=root group=docker mode=0775
+
+- name: Configure NetworkManager's dnsmasq for Docker Hostname Ping
+  copy: src=docker-dnsmasq.conf dest=/etc/NetworkManager/dnsmasq.d/docker

@@ -17,9 +17,15 @@
 - name: Install cURL
   apt: pkg=curl state=installed
 
+- name: Install inotify
+  apt: pkg=inotify-tools state=installed
+
 - name: Install system monitors for applets
   apt: pkg={{ item }} state=installed
   with_items:
     - vnstat
     - vnstati
     - gir1.2-gtop-2.0
+
+- name: Install supervisor
+  apt: pkg=supervisor state=installed

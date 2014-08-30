@@ -1,3 +1,4 @@
+- include: users.yml tags=users
 - include: version-control.yml tags=version-control
 - include: virtualisations.yml tags=virtualisations
 - include: browsers.yml tags=browsers
