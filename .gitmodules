@@ -1,0 +1,3 @@
+[submodule "docker-hostname-ping"]
+	path = docker-hostname-ping
+	url = git@github.com:jaysh/docker-hostname-ping.git
