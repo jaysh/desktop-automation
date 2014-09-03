@@ -25,7 +25,7 @@
   apt: pkg=lxc-docker state=installed
 
 - name: Install VirtualBox
-  apt: pkg=virtualbox state=installed
+  apt: pkg=virtualbox-qt state=installed
 
 - name: Ensure /etc/hosts.docker is writable by anyone in the Docker group
   file: path=/etc/hosts.docker owner=root group=docker mode=0775
