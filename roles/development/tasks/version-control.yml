@@ -9,3 +9,6 @@
 
 - name: Install Subversion
   apt: pkg=subversion state=installed
+
+- name: Install Mercurial (for Go)
+  apt: pkg=mercurial state=installed
