@@ -6,3 +6,5 @@
 - include: communicators.yml tags=communicators
 - include: multimedia.yml tags=multimedia
 - include: boot.yml tags=boot
+- include: backup.yml tags=backup
+- include: networking.yml tags=networking
