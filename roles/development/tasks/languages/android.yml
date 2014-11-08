@@ -11,3 +11,9 @@
     - androidsdk-hierarchyviewer
     - androidsdk-traceview
     - androidsdk-uiautomatorviewer
+
+- name: Install Java via OpenJDK
+  apt: pkg=openjdk-7-jdk state=installed
+
+- name: Install ant for building APKs
+  apt: pkg=ant state=installed
