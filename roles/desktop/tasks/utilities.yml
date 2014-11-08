@@ -5,17 +5,20 @@
     - iotop
     - powertop
 
-- name: Install GParted
+- name: Install GParted to partition my hard drive
   apt: pkg=gparted state=installed
 
-- name: Install unetbootin
+- name: Install unetbootin to create bootable USBs from ISOs
   apt: pkg=unetbootin state=installed
 
 - name: Install tree for an overview version of "ls"
   apt: pkg=tree state=installed
 
-- name: Install cURL
+- name: Install cURL for CLI based HTTP
   apt: pkg=curl state=installed
+
+- name: Install inotify to watch files and react
+  apt: pkg=inotify-tools state=installed
 
 - name: Install system monitors for applets
   apt: pkg={{ item }} state=installed
@@ -23,3 +26,21 @@
     - vnstat
     - vnstati
     - gir1.2-gtop-2.0
+
+- name: Install supervisor
+  apt: pkg=supervisor state=installed
+
+- name: Install "at" to schedule one-off jobs
+  apt: pkg=at state=installed
+
+- name: Install trickle to limit bandwidth on the CLI
+  apt: pkg=trickle state=installed
+
+- name: tcpkill, and related utilities
+  apt: pkg=dsniff state=installed
+
+- name: avconv for video manipulation
+  apt: pkg=libav-tools state=installed
+
+- name: run-one for simple non-overlapping crons
+  apt: pkg=run-one state=installed

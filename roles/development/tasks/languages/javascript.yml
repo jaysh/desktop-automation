@@ -1,6 +1,9 @@
 - name: Install NodeJS
   apt: pkg=nodejs state=installed
 
+- name: Symlink nodejs to node for legacy applications
+  file: src=/usr/bin/nodejs dest=/usr/bin/node state=link
+
 - name: Install NodeJS's package manager
   apt: pkg=npm state=installed
 
@@ -8,7 +11,7 @@
   apt: pkg=phantomjs state=installed
 
 - name: Install useful npm modules
-  shell: npm -g install {{ item }}
+  npm: name={{ item }} global=yes state=present
   with_items:
     - casperjs
     - slimerjs

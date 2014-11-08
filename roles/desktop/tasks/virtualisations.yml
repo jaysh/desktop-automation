@@ -1,5 +1,37 @@
+- name: AUFS tools for Docker
+  apt: pkg=aufs-tools state=installed
+
+- name: AppArmor tools for Docker
+  apt: pkg=apparmor state=installed
+
+- name: Does the Docker apt file exist?
+  command: test -f {{ docker_apt_file }}
+  register: docker_apt_exists
+  ignore_errors: true
+
+- name: Add Docker key
+  shell: apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 36A1D7869245C8950F966E92D8576A8BA88D21E9
+  when: docker_apt_exists.rc == 1
+
+- name: Add Docker repo
+  copy: content="deb https://get.docker.io/ubuntu docker main" dest={{ docker_apt_file }} owner=root group=root mode=644
+  when: docker_apt_exists.rc == 1
+
+- name: Update apt cache
+  apt: update_cache=yes
+  when: docker_apt_exists.rc == 1
+
 - name: Install Docker
-  apt: pkg=docker.io state=installed
+  apt: pkg=lxc-docker state=installed
 
 - name: Install VirtualBox
-  apt: pkg=virtualbox state=installed
+  apt: pkg=virtualbox-qt state=installed
+
+- name: Configure VirtualBox kernel modules
+  apt: pkg=virtualbox-dkms state=installed
+
+- name: Ensure /etc/hosts.docker is writable by anyone in the Docker group
+  file: path=/etc/hosts.docker owner=root group=docker mode=0775
+
+- name: Configure NetworkManager's dnsmasq for Docker Hostname Ping
+  copy: src=docker-dnsmasq.conf dest=/etc/NetworkManager/dnsmasq.d/docker

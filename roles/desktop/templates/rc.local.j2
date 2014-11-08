@@ -1,0 +1,27 @@
+{% raw -%}
+#!/bin/sh -e
+#
+# rc.local
+#
+# This script is executed at the end of each multiuser runlevel.
+# Make sure that the script will "exit 0" on success or any other
+# value on error.
+
+wakeup_enabled_devices=$(
+    # 1. Find all wakeup statements that contain "enabled".
+    # 2. Return only the first column (which contains the just device name).
+    # 3. Exclude any devices that appear to be a laptop lid sensor.
+    fgrep enabled /proc/acpi/wakeup \
+    | awk '{print $1}' \
+    | fgrep -v LID
+)
+for device in $wakeup_enabled_devices;
+do
+    # This will toggle the device. Based on the above, this will disable
+    # devices that we do not want to be enabled (but NOT enable any devices
+    # like the laptop lid, if it's already disabled).
+    echo $device > /proc/acpi/wakeup;
+done
+
+exit 0
+{% endraw %}

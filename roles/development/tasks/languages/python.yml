@@ -17,3 +17,10 @@
   shell: pip install {{ item }}
   with_items:
     - mitmproxy
+    - mock
+
+- name: Install Python3
+  apt: pkg=python3 state=installed
+
+- name: Install Python3's package managers
+  apt: pkg=python3-pip state=installed

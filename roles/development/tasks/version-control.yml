@@ -4,5 +4,11 @@
     - git
     - gitk
 
+- name: Copy the git prompt setup file
+  template: src=git_prompt.sh.j2 dest=~/git_prompt.sh
+
 - name: Install Subversion
   apt: pkg=subversion state=installed
+
+- name: Install Mercurial (for Go)
+  apt: pkg=mercurial state=installed

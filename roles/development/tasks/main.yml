@@ -6,6 +6,7 @@
 - include: languages/c.yml tags=languages/c
 - include: languages/python.yml tags=languages/python
 - include: languages/php.yml tags=languages/php
+- include: languages/go.yml tags=languages/go
 - include: languages/cpp.yml tags=languages/cpp
 - include: languages/android.yml tags=languages/android
 - include: editors.yml tags=editors

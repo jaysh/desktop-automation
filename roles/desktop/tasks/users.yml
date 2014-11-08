@@ -1,0 +1,14 @@
+- name: All docker users can sudo to "nobody"
+  copy: src=sudoers-nobody dest=/etc/sudoers.d/nobody
+
+- name: Setup my custom .bashrc
+  template: src=bashrc.j2 dest=~/.bashrc
+
+- name: Copy the Docker bashrc wrapper
+  copy: src=docker-bashrc.sh dest=~/.bashrc.d/docker-bashrc.sh
+
+- name: Copy the Docker Hostname Ping binaries
+  copy: src=docker_rebuild_docker_hosts.py dest=~/bin/rebuild_docker_hosts.py owner=jay group=jay mode=0755
+
+- name: Set Bash to interlace history, not 'last terminal wins'
+  copy: src=multiplehistory-bashrc.sh dest=~/.bashrc.d/multiplehistory-bashrc.sh
