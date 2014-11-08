@@ -27,6 +27,9 @@
 - name: Install VirtualBox
   apt: pkg=virtualbox-qt state=installed
 
+- name: Configure VirtualBox kernel modules
+  apt: pkg=virtualbox-dkms state=installed
+
 - name: Ensure /etc/hosts.docker is writable by anyone in the Docker group
   file: path=/etc/hosts.docker owner=root group=docker mode=0775
 
