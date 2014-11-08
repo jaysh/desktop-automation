@@ -6,3 +6,6 @@
 
 - name: Install unrar-er
   apt: pkg=rar state=installed
+
+- name: cURL development packages
+  apt: pkg=libcurl4-openssl-dev state=installed
