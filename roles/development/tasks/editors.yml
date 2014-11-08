@@ -7,3 +7,4 @@
 
 - name: Install rich GUI editors
   apt: pkg=sublime-text state=installed
+  ignore_errors: true

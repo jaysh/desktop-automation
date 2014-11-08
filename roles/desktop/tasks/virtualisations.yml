@@ -33,5 +33,8 @@
 - name: Ensure /etc/hosts.docker is writable by anyone in the Docker group
   file: path=/etc/hosts.docker owner=root group=docker mode=0775
 
+- name: Ensure we have network-manager for the next step
+  apt: pkg=network-manager state=installed
+
 - name: Configure NetworkManager's dnsmasq for Docker Hostname Ping
   copy: src=docker-dnsmasq.conf dest=/etc/NetworkManager/dnsmasq.d/docker

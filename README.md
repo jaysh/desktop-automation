@@ -6,9 +6,8 @@ Ansible scripts that I run in order to convert a basic apt based distribution in
 # How to use it
 
 1. Clone this repository (see right side of the page)
-2. Run `sudo ansible-playbook -c local -i '127.0.0.1,' site.yml `
-3. ???
-4. Profit!
+2. Run `git submodule update --init`
+3. Run `sudo ansible-playbook -c local -i '127.0.0.1,' site.yml `
 
 # Things left to do
 

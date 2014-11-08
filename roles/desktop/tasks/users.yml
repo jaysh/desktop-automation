@@ -4,6 +4,12 @@
 - name: Setup my custom .bashrc
   template: src=bashrc.j2 dest=~/.bashrc
 
+- name: Create an empty .bashrc.d ready for modular bashrc's
+  file: state=directory dest=~/.bashrc.d
+
+- name: Create an empty directory for user-local binaries
+  file: state=directory dest=~/bin
+
 - name: Copy the Docker bashrc wrapper
   copy: src=docker-bashrc.sh dest=~/.bashrc.d/docker-bashrc.sh
 

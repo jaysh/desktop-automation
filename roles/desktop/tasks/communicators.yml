@@ -1,5 +1,6 @@
 - name: Install Skype
   apt: pkg=skype state=installed
+  ignore_errors: true
 
 - name: Does the Google apt file exist?
   command: test -f {{ google_talk_apt_file }}
@@ -16,3 +17,4 @@
 
 - name: Install Google Hangouts plugin
   apt: pkg=google-talkplugin state=installed
+

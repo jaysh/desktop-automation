@@ -12,6 +12,8 @@
   with_items:
     - libxml2-dev
     - libxslt-dev
+    - python-dev
+    - libffi-dev
 
 - name: Install Pip modules
   shell: pip install {{ item }}
