@@ -13,6 +13,9 @@
 - name: Copy the Docker bashrc wrapper
   copy: src=docker-bashrc.sh dest=~/.bashrc.d/docker-bashrc.sh
 
+- name: Put jay in the docker group
+  user: name=jay groups=docker append=yes
+
 - name: Copy the Docker Hostname Ping binaries
   copy: src=docker_rebuild_docker_hosts.py dest=~/bin/rebuild_docker_hosts.py owner=jay group=jay mode=0755
 
